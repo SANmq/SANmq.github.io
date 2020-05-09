@@ -1,0 +1,89 @@
+html,
+body,ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+.clearfix::after{
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.clean-mine{
+    background-color: salmon;
+    margin: 30px auto;
+    border: 4px inset #999;
+    text-align: center;
+    user-select: none;
+}
+
+.clean-mine .window .taskbar{
+    border-bottom: 4px outset #999;
+    padding: 10px 10px;
+}
+
+
+.clean-mine .window .taskbar .time{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 2px outset #888888;
+}
+
+.clean-mine .window .taskbar .restmine{
+    float: right;
+    width: 40px;
+    height: 40px;
+    border: 2px outset #888888;
+    line-height: 40px;
+}
+
+.clean-mine .window .taskbar .start{
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 2px outset #888888;
+    line-height: 40px;
+}
+
+.clean-mine .window .taskbar .start:active{
+    border: 2px inset #888888;
+}
+
+.clean-mine .window .gamepart ul li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    user-select: none;
+}
+
+.clean-mine .window .gamepart ul .on{
+    border: 2px outset #666666;
+    background-color: #999;
+}
+
+.clean-mine .window .gamepart ul .on:active{
+    border: 2px inset #666666;
+}
+
+.clean-mine .window .gamepart ul .off{
+    border: 2px inset #666666;
+    background-color: chartreuse;
+}
+
+.clean-mine .window .gamepart ul .flag{
+    border: 2px inset #666666;
+    background-color: blue;
+}
+
+.clean-mine .window .gamepart ul .boo{
+    border: 2px inset #666666;
+    background-color: red;
+}
