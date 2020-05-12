@@ -13,6 +13,7 @@ html {
 
 body {
     background-color: yellow;
+    text-align: center;
 }
 
 .clearfix::after {
@@ -26,14 +27,24 @@ body {
     height: 100%;
 }
 
+
 .pintu ul {
-    width: 80%;
-    margin: 0 auto;
+    width: 300px;
+    margin: 10% auto;
+    text-align: justify;
+    outline: 10px solid lightblue;
+    background-color: #11253a;
+
+}
+
+.pintu ul::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
 }
 
 .pintu ul li {
-    float: left;
-    width: 33.3%;
-    background-color: violet;
-    text-align: center;
+    display: inline-block;
+    vertical-align: bottom;
+    background-image: url("../img/1.jpg");
 }
