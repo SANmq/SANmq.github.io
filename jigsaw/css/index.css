@@ -3,8 +3,14 @@
     padding: 0;
 }
 
-ul,li{
-    list-style-type:none;
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+li {
+    list-style-type: none;
 }
 
 html {
@@ -30,19 +36,26 @@ body {
 
 .pintu ul {
     width: 300px;
-    margin: 10% auto;
+    margin: 15px auto;
     text-align: justify;
     outline: 10px solid lightblue;
     background-color: #11253a;
+    background-size: contain;
     position: relative;
-
+    background-image: url("../img/1.jpg");
 }
 
-/* .pintu ul::after{
-    content: "";
-    display: inline-block;
-    width: 100%;
-} */
+.pintu .step{
+    background-color: limegreen;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.pintu .btn{
+    display: block;
+    margin-top: 20px;
+}
 
 .pintu ul li {
     background-image: url("../img/1.jpg");
