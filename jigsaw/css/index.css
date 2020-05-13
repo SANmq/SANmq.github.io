@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-color: yellow;
+    background-color: black;
     text-align: center;
 }
 
@@ -36,6 +36,7 @@ body {
 
 .pintu ul {
     width: 300px;
+    height: 300px;
     margin: 15px auto;
     text-align: justify;
     outline: 10px solid lightblue;
@@ -45,16 +46,71 @@ body {
     background-image: url("../img/1.jpg");
 }
 
-.pintu .step{
-    background-color: limegreen;
-    width: 30px;
-    height: 30px;
+.pintu .step {
+    background-color: #008c8c;
+    width: 40px;
+    height: 40px;
     margin: 0 auto;
+    border-radius: 3px;
+    user-select: none;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: 900;
 }
 
-.pintu .btn{
+.pintu .tip {
+    width: 100px;
+    margin: 5px auto;
+    color: black;
+    border-radius: 10px;
+    /* background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400% 400%; */
+    background-color: turquoise;
+    user-select: none;
+    font-weight: 800;
+    
+}
+
+
+@keyframes sun{
+    100% {
+        background-position: -400% 0;
+    }
+}
+
+.pintu .btn {
     display: block;
+    width: 150px;
+    margin: 0 auto;
     margin-top: 20px;
+    font-size: 24px;
+    border: 1px solid #008c8c;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    position: relative;
+}
+
+.pintu .btn::before{
+    content: "";
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    bottom:-5px;
+    top:-5px;
+    background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 25px;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.pintu .btn:hover{
+    animation: sun 8s infinite;
+}
+
+.pintu .btn:hover::before{
+    animation: sun 8s infinite;
 }
 
 .pintu ul li {

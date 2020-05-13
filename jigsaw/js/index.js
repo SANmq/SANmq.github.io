@@ -8,6 +8,7 @@ Jigsaw.prototype = {
     },
 
     initData: function () {
+        this.xianshi = this.el.getElementsByClassName("step")[0];
         this.ul = this.el.getElementsByTagName("ul")[0];
         this.ulwidth = parseInt(window.getComputedStyle(this.ul, null).width);
         this.liwidth = (this.ulwidth) / this.boder;
@@ -35,6 +36,7 @@ Jigsaw.prototype = {
                             self.li[j].style.top = self.item[self.item[j].now].top + 'px';
                             self.li[self.block.no].style.left = self.item[self.block.now].left + 'px';
                             self.li[self.block.no].style.top = self.item[self.block.now].top + 'px';
+                            self.xianshi.innerText = parseInt(self.xianshi.textContent) + 1
                             if (self.win()) {
                                 setTimeout('alert("you are win")', 100);
                                 self.li[self.boder ** 2 - 1].style.backgroundImage = null
@@ -92,9 +94,9 @@ Jigsaw.prototype = {
                 temp += `<li class="item${i}" style="width:${this.liwidth}px;height:${this.liwidth}px;background-size: ${this.boder}00% ${this.boder}00%;background-position:${this.item[i].x}% ${this.item[i].y}%;left:${this.item[i].left}px;top:${this.item[i].top}px"></li>`
             }
         }
-        this.ul.style.height = this.ulwidth + 'px';
         this.ul.innerHTML = temp;
         this.li = this.ul.childNodes;
+        this.xianshi.innerText = 0;
     },
     // 随机打乱拼图
     random: function () {
@@ -125,8 +127,7 @@ function Jigsaw(el, img, boder) {
 }
 
 var el = document.getElementById('pintu');
-var game = new Jigsaw(el, "img/1.jpg", 3);
 var start = el.getElementsByClassName('btn')[0];
 start.onclick = function () {
-    new Jigsaw(el, "img/1.jpg", 3);
+    var game = new Jigsaw(el, "img/1.jpg", 3);
 }
