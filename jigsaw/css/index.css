@@ -34,17 +34,19 @@ body {
     text-align: justify;
     outline: 10px solid lightblue;
     background-color: #11253a;
+    position: relative;
 
 }
 
-.pintu ul::after{
+/* .pintu ul::after{
     content: "";
     display: inline-block;
     width: 100%;
-}
+} */
 
 .pintu ul li {
-    display: inline-block;
-    vertical-align: bottom;
     background-image: url("../img/1.jpg");
+    border: 1px solid #008c8c;
+    box-sizing: border-box;
+    position: absolute;
 }
