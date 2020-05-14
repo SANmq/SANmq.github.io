@@ -106,17 +106,42 @@ Jigsaw.prototype = {
     },
     // 随机打乱拼图
     random: function () {
-        let index = []
+        let hold = 0
+        let target = []
         for (let i = 0; i < this.boder ** 2; i++) {
-            index.push(i);
+            target.push(i)
         }
-        index.sort(function (a, b) {
+
+        target.sort(function () {
             return Math.random() - 0.5
         })
+
+        for (let j = 0; j < this.boder ** 2 - 1; j++) {
+            for (let k = j + 1; k < this.boder ** 2; k++) {
+                if (target[j] > target[k]){
+                    hold++
+                }
+            }
+        }
+        console.log(hold)
+
+        // for (let j = 0; j < 5; j++) {
+        //     index.sort(function (a, b) {
+        //         return Math.random() - 0.5
+        //     })
+        //     for (i = 0; i < parseInt(this.boder ** 2 / 3) * 3; i += 3) {
+        //         console.log(index[i])
+        //         hold = this.target[index[i]];
+        //         this.target[index[i]] = this.target[index[i + 1]]
+        //         this.target[index[i + 1]] = this.target[index[i + 2]]
+        //         this.target[index[i + 2]] = hold;
+        //     }
+        // }
+
         for (let i = 0; i < this.boder ** 2; i++) {
-            this.li[i].style.left = this.item[index[i]].left + 'px';
-            this.li[i].style.top = this.item[index[i]].top + 'px';
-            this.item[i].now = index[i];
+            this.li[i].style.left = this.item[target[i]].left + 'px';
+            this.li[i].style.top = this.item[target[i]].top + 'px';
+            this.item[i].now = target[i];
         }
     }
 }
