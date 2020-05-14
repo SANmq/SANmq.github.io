@@ -48,7 +48,8 @@ body {
 
 .pintu .step {
     background-color: #008c8c;
-    width: 40px;
+    min-width: 40px;
+    max-width: 80px;
     height: 40px;
     margin: 0 auto;
     border-radius: 3px;
@@ -79,13 +80,12 @@ body {
 }
 
 .pintu .btn {
-    display: block;
-    width: 150px;
+    display: inline-block;
+    width: 50px;
     margin: 0 auto;
-    margin-top: 20px;
     font-size: 24px;
     border: 1px solid #008c8c;
-    border-radius: 25px;
+    border-radius: 10px;
     background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
     position: relative;
@@ -100,7 +100,7 @@ body {
     top:-5px;
     background: linear-gradient(90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4);
     background-size: 400%;
-    border-radius: 25px;
+    border-radius: 10px;
     filter: blur(20px);
     z-index: -1;
 }
@@ -118,4 +118,13 @@ body {
     border: 1px solid #008c8c;
     box-sizing: border-box;
     position: absolute;
+}
+
+.pintu .start{
+    margin: 10px auto;
+    color: white;
+}
+
+.pintu .select{
+    margin: 0 auto;
 }

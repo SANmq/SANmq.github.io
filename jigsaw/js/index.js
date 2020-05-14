@@ -2,6 +2,11 @@ Jigsaw.prototype = {
 
     init: function () {
         this.initData();
+        this.ul.style.backgroundImage = null
+    },
+
+    start: function () {
+        this.initData();
         this.render();
         this.random();
         this.handle();
@@ -95,6 +100,7 @@ Jigsaw.prototype = {
             }
         }
         this.ul.innerHTML = temp;
+        this.ul.style.backgroundImage = "none"
         this.li = this.ul.childNodes;
         this.xianshi.innerText = 0;
     },
@@ -127,7 +133,20 @@ function Jigsaw(el, img, boder) {
 }
 
 var el = document.getElementById('pintu');
-var start = el.getElementsByClassName('btn')[0];
-start.onclick = function () {
-    var game = new Jigsaw(el, "img/1.jpg", 3);
+var start1 = el.getElementsByClassName('btn')[0];
+var start2 = el.getElementsByClassName('btn')[1];
+var start3 = el.getElementsByClassName('btn')[2];
+
+var game = new Jigsaw(el, "img/1.jpg", 3);
+start1.onclick = function () {
+    game.boder = 3;
+    game.start();
+}
+start2.onclick = function () {
+    game.boder = 4;
+    game.start();
+}
+start3.onclick = function () {
+    game.boder = 5;
+    game.start();
 }
