@@ -108,36 +108,26 @@ Jigsaw.prototype = {
     random: function () {
         let hold = 0
         let target = []
-        for (let i = 0; i < this.boder ** 2; i++) {
+        for (let i = 0; i < this.boder ** 2 - 1; i++) {
             target.push(i)
         }
-
-        target.sort(function () {
-            return Math.random() - 0.5
-        })
-
-        for (let j = 0; j < this.boder ** 2 - 1; j++) {
-            for (let k = j + 1; k < this.boder ** 2; k++) {
-                if (target[j] > target[k]){
-                    hold++
+        while (true) {
+            hold = 0;
+            target.sort(function () {
+                return Math.random() - 0.5
+            })
+            for (let j = 0; j < target.length - 1; j++) {
+                for (let k = j + 1; k < target.length; k++) {
+                    if (target[j] > target[k]) {
+                        hold++
+                    }
                 }
             }
+            if (hold % 2 == 0) {
+                break;
+            }
         }
-        console.log(hold)
-
-        // for (let j = 0; j < 5; j++) {
-        //     index.sort(function (a, b) {
-        //         return Math.random() - 0.5
-        //     })
-        //     for (i = 0; i < parseInt(this.boder ** 2 / 3) * 3; i += 3) {
-        //         console.log(index[i])
-        //         hold = this.target[index[i]];
-        //         this.target[index[i]] = this.target[index[i + 1]]
-        //         this.target[index[i + 1]] = this.target[index[i + 2]]
-        //         this.target[index[i + 2]] = hold;
-        //     }
-        // }
-
+        target.push(this.boder ** 2 - 1)
         for (let i = 0; i < this.boder ** 2; i++) {
             this.li[i].style.left = this.item[target[i]].left + 'px';
             this.li[i].style.top = this.item[target[i]].top + 'px';
