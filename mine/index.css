@@ -1,7 +1,16 @@
 html,
-body,ul {
+body,
+ul {
     margin: 0;
     padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    text-align: center;
+    font-weight: 800;
+    background: url(timg.jpg);
+    background-size: 100% 100%;
 }
 
 ul,
@@ -10,80 +19,141 @@ li {
     list-style-type: none;
 }
 
-.clearfix::after{
+.clearfix::after {
     display: block;
     content: "";
     clear: both;
 }
 
-.clean-mine{
-    background-color: salmon;
-    margin: 30px auto;
-    border: 4px inset #999;
-    text-align: center;
-    user-select: none;
-}
-
-.clean-mine .window .taskbar{
-    border-bottom: 4px outset #999;
-    padding: 10px 10px;
-}
-
-
-.clean-mine .window .taskbar .time{
+.left {
     float: left;
-    width: 40px;
-    height: 40px;
-    border: 2px outset #888888;
 }
 
-.clean-mine .window .taskbar .restmine{
+.right {
     float: right;
-    width: 40px;
-    height: 40px;
-    border: 2px outset #888888;
+}
+
+
+.mine {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mine .bar {
+    height: 46px;
     line-height: 40px;
+    text-align: center;
+    border: 5px solid black;
+    margin: auto;
+    padding: 5px 0;
+    padding-bottom: 5px;
+    background-color: rgb(223, 67, 11);
 }
 
-.clean-mine .window .taskbar .start{
-    margin: 0 auto;
-    width: 40px;
-    height: 40px;
-    border: 2px outset #888888;
-    line-height: 40px;
-}
-
-.clean-mine .window .taskbar .start:active{
-    border: 2px inset #888888;
-}
-
-.clean-mine .window .gamepart ul li{
-    float: left;
-    width: 20px;
-    height: 20px;
+.mine .time {
+    border: 3px outset #999;
+    background-color: black;
+    color: white;
+    padding: 0 5px;
+    border-radius: 10px;
     user-select: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.clean-mine .window .gamepart ul .on{
-    border: 2px outset #666666;
-    background-color: #999;
+.mine .time:active {
+    border: 3px inset #999;
 }
 
-.clean-mine .window .gamepart ul .on:active{
-    border: 2px inset #666666;
+
+
+.mine .start {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin: auto;
+    border: 3px outset #999;
+    background: url(smile.png) no-repeat;
+    background-size: 100% 100%;
+    user-select: none;
+    border-radius: 25px;
 }
 
-.clean-mine .window .gamepart ul .off{
-    border: 2px inset #666666;
-    background-color: chartreuse;
+.mine .start:active {
+    border: 3px inset #999;
 }
 
-.clean-mine .window .gamepart ul .flag{
-    border: 2px inset #666666;
-    background-color: blue;
+.mine .rest {
+    border: 3px inset #999;
+    background-color: black;
+    color: white;
+    padding: 0 5px;
+    border-radius: 10px;
+    user-select: none;
+    width: 30px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-.clean-mine .window .gamepart ul .boo{
-    border: 2px inset #666666;
-    background-color: red;
+
+
+.mine ul {
+    width: 300px;
+    border: 5px rgb(136, 3, 59);
+    border-bottom-style: outset;
+    border-right-style: inset;
+    border-top-style: inset;
+    border-left-style: outset;
+    margin: auto;
+}
+
+.mine li {
+    float: left;
+    width: 30px;
+    height: 30px;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+/* 默认状态 */
+.mine .status0 {
+    border: 2px outset #999;
+    background-color: #aaa;
+}
+
+/* 默认状态点击事件 */
+.mine .status5 {
+    background-color: #aaa;
+    border: 2px inset #999;
+}
+
+/* 被点开 */
+.mine li.status1 {
+    background-color: #ccc;
+    border: 1px solid #666;
+}
+
+/* 被插旗 */
+.mine li.status2 {
+    border: 2px outset #999;
+    background: url(flag.png);
+    background-size: 95% 95%;
+    background-position: 2px;
+}
+
+/* 被标记问好 */
+.mine li.status3 {
+    background: url(doubt.png) no-repeat;
+    background-size: 100% 100%;
+    border: 2px outset #999;
+}
+
+/* 是地雷 */
+.mine li.status4 {
+    background: url(boom.png) no-repeat;
+    background-size: 100% 100%;
+    border: 1px solid #666;
 }
