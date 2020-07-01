@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <b>
+        <p class="time">123</p>
+    </b>
+    <script>
+        setInterval(function () {
+            let now = new Date()
+            let hh = now.getHours(),
+                mm = now.getMinutes(),
+                ss = now.getSeconds();
+            if (hh < 10) {
+                hh = '0' + hh
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            if (ss < 10) {
+                ss = '0' + ss
+            }
+            let time = hh + ':' + mm + ':' + ss
+            document.querySelector('.time').innerText = time
+        }, 1000)
+    </script>
+</body>
+
+</html>
